@@ -1,6 +1,10 @@
 <?php
-//DB Params
 
+//Common Params
+
+define('ERROR_REPORTING',false);
+
+//DB Params
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASSWORD','Mehedi@2020');
