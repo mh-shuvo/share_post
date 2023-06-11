@@ -19,6 +19,16 @@
 CREATE DATABASE IF NOT EXISTS `share_posts` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `share_posts`;
 
+    -- Dumping structure for table share_posts.users
+CREATE TABLE IF NOT EXISTS `users` (
+                                       `id` int NOT NULL AUTO_INCREMENT,
+                                       `name` varchar(50) DEFAULT NULL,
+    `email` varchar(50) DEFAULT NULL,
+    `password` varchar(50) DEFAULT NULL,
+    `created_at` timestamp NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 -- Dumping structure for table share_posts.posts
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -33,15 +43,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
 
 -- Dumping data for table share_posts.posts: ~0 rows (approximately)
 
--- Dumping structure for table share_posts.users
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 -- Dumping data for table share_posts.users: ~0 rows (approximately)
 

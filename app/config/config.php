@@ -2,19 +2,19 @@
 
 //Common Params
 
-define('ERROR_REPORTING',false);
+define('ERROR_REPORTING',true);
 
 //DB Params
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASSWORD','Mehedi@2020');
+define('DB_PASSWORD','root');
 define('DB_NAME','share_posts');
 
 //App Root
 define("APPROOT",dirname(dirname(__FILE__)));
 //URL Root
 
-define("URLROOT","http://localhost/mh-shuvo/share_post");
+define("URLROOT","http://localhost/others/mh-shuvo/share_post");
 
 //Site Name
 define("SITENAME","Share Posts");
