@@ -30,3 +30,7 @@ function flash($name='',$message='',$class='alert alert-success'){
 
     }
 }
+
+function currentUser($key){
+    return array_key_exists($key,$_SESSION) ? $_SESSION[$key] : false;
+}

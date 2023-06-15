@@ -2,6 +2,8 @@
 
 class Handler{
 
+    private function __construct(){}
+
     public static function assets($path){
         echo URLROOT.'/'.$path;
     }
