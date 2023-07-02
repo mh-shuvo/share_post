@@ -1,6 +1,6 @@
 <?php
+Handler::setPageTitle("Add New Post");
 Handler::include('inc.header');
-
 ?>
     <div class="row">
         <div class="col-md-6 mx-auto">

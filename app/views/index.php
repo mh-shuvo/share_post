@@ -1,4 +1,7 @@
-<?php Handler::include("inc.header");?>
+<?php
+Handler::setPageTitle();
+Handler::include("inc.header");
+?>
 <div class="p-5 mt-2 mb-4 bg-body-secondary rounded-3">
       <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold"><?php echo $data['title'];?></h1>

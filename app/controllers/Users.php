@@ -63,7 +63,7 @@ class Users extends Controller{
                 // Register User
 
                 if($this->userModel->register($data)){
-                    flash("register_success","Now you are registered. You can log in now.");
+                     session()->flash("register_success","Now you are registered. You can log in now.");
                     redirect('users/login');
                 }else{
                     die("something went wrong");
@@ -91,7 +91,7 @@ class Users extends Controller{
             //Process form
             //Sanitize POST data
 
-            $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+            $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             //Process form
             $data = [
@@ -153,25 +153,12 @@ class Users extends Controller{
     }
 
     public function logout(){
-        unset($_SESSION['user_id']);
-        unset($_SESSION['user_email']);
-        unset($_SESSION['user_name']);
-        session_destroy();
+        auth()->logout();
         redirect('users/login');
     }
 
-    public function isLoggedIn(){
-        if(isset($_SESSION['user_id'])){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     public function createUserSession($user){
-        $_SESSION['user_id'] = $user->id;
-        $_SESSION['user_email'] = $user->email;
-        $_SESSION['user_name'] = $user->name;
+        auth()->createUserSession($user);
         redirect('pages/index');
     }
 }

@@ -19,10 +19,20 @@
         </ul>
 
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <?php if(isset($_SESSION['user_id'])){ ?>
-            <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="<?php echo URLROOT;?>/users/logout">Logout</a>
-          </li>
+          <?php if(auth()->check()){ ?>
+              <!-- Example single danger button -->
+              <!-- Example single danger button -->
+              <div class="btn-group">
+                  <button type="button" class="btn btn-danger dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
+                      <?= auth()->user()->name; ?>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="<?php echo URLROOT;?>/profile">Profile</a></li>
+                      <li><a class="dropdown-item" href="javascript:void(0)">My Posts</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="<?php echo URLROOT;?>/users/logout">Logout</a></li>
+                  </ul>
+              </div>
           <?php } else { ?>
 
           <li class="nav-item">

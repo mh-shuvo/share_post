@@ -5,7 +5,7 @@ class Handler{
     private function __construct(){}
 
     public static function assets($path){
-        echo URLROOT.'/'.$path;
+        return URLROOT.'/'.$path;
     }
 
     public static function include($path,$ext="php"){
@@ -21,5 +21,14 @@ class Handler{
     private static function parseViewUrl($url){
         $view = str_replace(".","/",$url);
         return $view;
+    }
+
+    public static function getPageTitle()
+    {
+        return session()->has(PAGE_TITLE_KEY) ? session()->get(PAGE_TITLE_KEY) : SITENAME;
+    }
+    public static function setPageTitle($value=SITENAME)
+    {
+        session()->put(PAGE_TITLE_KEY,$value);
     }
 }

@@ -3,6 +3,7 @@
 //Common Params
 
 define('ERROR_REPORTING',true);
+define('PAGE_TITLE_KEY','page_title');
 
 //DB Params
 define('DB_HOST','localhost');
@@ -18,4 +19,4 @@ define("URLROOT","http://localhost/others/mh-shuvo/share_post");
 
 //Site Name
 define("SITENAME","Share Posts");
-define("APPVERSION","1.0.0");
+define("APPVERSION","1.5.0");

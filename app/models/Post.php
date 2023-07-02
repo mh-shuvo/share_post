@@ -36,4 +36,13 @@ class Post extends Model
         }
         return null;
     }
+    public function getPostById($id){
+        $this->db->query('SELECT posts.*,users.name FROM posts join users on users.id = posts.user_id WHERE posts.id = :id');
+        $this->db->bind(':id',$id);
+
+        if($this->db->execute()){
+            return $this->db->single();
+        }
+        return null;
+    }
 }
