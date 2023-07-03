@@ -2,7 +2,6 @@
 
 class Session
 {
-
     public function put($key,$value) {
         $_SESSION[$key] = $value;
     }
@@ -23,7 +22,6 @@ class Session
     public function destroy($key){
         session_destroy();
     }
-
 
     /**
      * EXAMPLE -  session()->flash('register_success','you are registered');

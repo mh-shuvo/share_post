@@ -20,8 +20,10 @@ class Post extends Model
             return false;
         }
     }
-    public function getLatestPosts(){
-        $this->db->query('SELECT posts.*,users.name FROM posts join users on users.id = posts.user_id ORDER BY posts.id DESC LIMIT 10');
+    public function getLatestPosts($start=0,$length=10){
+        $this->db->query('SELECT posts.*,users.name FROM posts join users on users.id = posts.user_id ORDER BY posts.id DESC LIMIT :start,:length');
+        $this->db->bind(":start",$start);
+        $this->db->bind(":length",$length);
 
         if($this->db->execute()){
             return $this->db->resultSet();

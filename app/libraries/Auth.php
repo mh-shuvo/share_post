@@ -16,7 +16,7 @@ class Auth
     public function id()
     {
         $user = $this->session->get($this->key);
-        return $user->id;
+        return $user?->id;
     }
 
     public function createUserSession($user)

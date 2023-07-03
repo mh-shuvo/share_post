@@ -15,6 +15,7 @@ class Posts extends Controller
 
     public function create()
     {
+        isAuthenticated();
         $data = [
             'title' => '',
             'body' => '',
